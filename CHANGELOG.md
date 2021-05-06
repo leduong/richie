@@ -39,6 +39,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 
 - Add a new authentication backend `fonzie`
+- Add react-query to manage API requests and local data store
 
 ### Changed
 
