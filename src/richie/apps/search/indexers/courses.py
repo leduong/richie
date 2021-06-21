@@ -549,7 +549,7 @@ class CoursesIndexer:
                 "enrollment_end": cr["enrollment_end"] or cr["end"] or MAX_DATE,
                 "languages": cr["languages"],
             }
-            for cr in course.get_course_runs()
+            for cr in course.course_runs
             .filter(start__isnull=False, enrollment_start__isnull=False)
             .order_by("-end")
             .values("start", "end", "enrollment_start", "enrollment_end", "languages")
