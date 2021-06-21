@@ -198,6 +198,13 @@ class Course(BasePageExtension):
             title=self.extended_object.get_title(),
         )
 
+    @property
+    def pt_effort(self):
+        """Return effort as a PT string for schema.org metadata."""
+        (effort, effort_unit) = self.effort
+        unit_letter = effort_unit[0].upper()
+        return f"PT{effort:d}{unit_letter:s}"
+
     def validate_unique(self, exclude=None):
         """
         We can't enforce code unicity with a db constraint because it is repeated across
